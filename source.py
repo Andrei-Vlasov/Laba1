@@ -1,5 +1,9 @@
-def sort_by_score(file):
-    f=open(file, "r")
+from os.path import relpath
+folder = relpath('resources')
+file = 'pr_league1.csv'
+
+def sort_by_score(file, folder):
+    f = open(f"{folder}/{file}")
     matches = [line.strip().split(',') for line in f]
     teamCount = int(matches.pop(0)[0])
     scores = []
@@ -25,5 +29,6 @@ def output_scoreboard(scores):
         for i in range(len(scores)):
             result.write(f"{scores[i][1]},{scores[i][0]}\n")
 
-scores = sort_by_score("pr_league1.csv")
+
+scores = sort_by_score(file, folder)
 output_scoreboard(scores)
