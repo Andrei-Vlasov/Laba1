@@ -18,3 +18,5 @@ for i in range(teamCount):
     scores[i][0], scores[i][1] = scores[i][1], scores[i][0]
 scores.sort(reverse=True)
 print(scores)
+
+#with open("scoreboard.csv", "w") as
